@@ -8,16 +8,17 @@ html {
   min-height: 100%;
   }
   .footer {
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  padding: 150px 0;
+  padding: 50px 0;
   text-aligh: center;
+  margin-top: 100px;
   }
   .content {
-  margin-bottom: 100px;
+  margin-bottom: 1px;
   margin-top: 50px;
   margin-left: 200px;
   margin-right: 200px;

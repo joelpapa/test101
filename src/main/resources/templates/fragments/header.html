@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<div th:fragement="header" class="header">
+<div th:fragement="header" >
     <div class="b-example-divider"></div>
 
     <header class="p-3 text-bg-dark">
@@ -24,8 +24,8 @@
                 </form>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    <button type="button" class="btn btn-warning">Sign-up</button>
+                    <a href="/members/login" class="btn btn-outline-light me-2" >Login</a>
+                    <a href="/members/new" class="btn btn-warning" >Sign-up</a>
                 </div>
             </div>
         </div>

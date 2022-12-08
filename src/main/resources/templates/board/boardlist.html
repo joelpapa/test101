@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:justify-content="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layouts/layout1}">
 <!--<th:block layout:fragement="css">-->
 <!--    <style>-->
@@ -38,5 +38,9 @@
             <td th:text="${board.title}">제목</td>
         </tr>
         </tbody>
+    </table>
+        <div>
+            <a href="/board/write" class="btn btn-success">새글작성</a>
+        </div>
 </div>
 </html>
