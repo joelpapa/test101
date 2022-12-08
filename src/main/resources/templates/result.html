@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<div layout:fragment="~{content}">
+<h1>Result</h1>
+<p th:text="'id: ' + ${greeting.id}" />
+<p th:text="'password: ' + ${greeting.password}" />
+<a href="/greeting">Submit another message</a>
+</div>
+</html>
