@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<!--<th:block layout:fragement="css">-->
+<!--    <style>-->
+<!--        .fieldError {-->
+<!--         color: #bd2130;-->
+<!--         }-->
+<!--    </style>-->
+<!--</th:block>-->
+
+<!--<th:block layout:fragment="script">-->
+<!--    <script th:inline="javascript">-->
+<!--        $(document).ready(function() {-->
+<!--          var errorMessage = [[${errorMessage}]];-->
+<!--          if(errorMessage != null) {-->
+<!--            alert(errorMessage);-->
+<!--                                   }-->
+<!--        } );-->
+
+<!--    </script>-->
+
+<!--</th:block>-->
+
+<div layout:fragment="~{content}">
+    <form th:action="@{/board/writego}" method="post">
+        <label for="title">제목:</label><br>
+        <input type="text" id="title" name="title" value="글제목"><br>
+        <label for="content">내용:</label><br>
+        <input type="textarea" id="content" name="content" value="내용"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</html>

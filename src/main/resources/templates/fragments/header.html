@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-etras-springsecurity5">
 
 <div th:fragement="header" >
     <div class="b-example-divider"></div>
@@ -16,7 +17,9 @@
                     <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                    <li><a href="/board/list" class="nav-link px-2 text-white">게시판</a></li>
+                    <li sec:authorize="isAuthenticated()">
+                        <a class="nav-link px-2 text-white" href="/board/list" >게시판</a>
+                    </li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -24,8 +27,15 @@
                 </form>
 
                 <div class="text-end">
-                    <a href="/members/login" class="btn btn-outline-light me-2" >Login</a>
-                    <a href="/members/new" class="btn btn-warning" >Sign-up</a>
+
+                        <a sec:authorize="isAnonymous()" class="btn btn-outline-light me-2"  th:href="@{/members/login}" >로긴</a>
+
+                        <a sec:authorize="isAnonymous()" class="btn btn-warning"  th:href="@{/members/new}"  >회원가입</a>
+
+                        <a sec:authorize="isAuthenticate()" class="btn btn-outline-light me-2"
+                            th:href="@{/members/logout}"    >로그아웃</a>
+
+
                 </div>
             </div>
         </div>
