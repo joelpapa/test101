@@ -17,10 +17,15 @@ public class MvcConfig implements WebMvcConfigurer{
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/logout_success").setViewName("logout_success");
-        registry.addViewController("/members/login").setViewName("/member/Login");
-        registry.addViewController("/members/new").setViewName("/member/new");
-        registry.addViewController("/board/list").setViewName("board/list");
-        registry.addViewController("/board/write").setViewName("board/write");
+        registry.addViewController("/members/login").setViewName("/members/Login");
+        registry.addViewController("/members/new").setViewName("/members/new");
+        registry.addViewController("/category/list").setViewName("/category/list");
+
+//        registry.addViewController("/board/list").setViewName("/board/list");
+//        registry.addViewController("/board/write").setViewName("/board/write");
+//        registry.addViewController("/board/writego").setViewName("/board/writego");
+
+
 
 
     }

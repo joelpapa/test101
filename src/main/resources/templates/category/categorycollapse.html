@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<div layout:fragment="~{content}">
+
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-5 fw-semibold">상품</span>
+        </a>
+        <ul class="list-unstyled ps-0" >
+            <th:block th:each="cat, cs : ${categoryPList}">
+            <li class="mb-1" >
+                <button th:if="${cs.index}==0" class="btn btn-link" th:text="${cat.name}" data-bs-toggle="collapse" data-bs-target="#명함"  aria-expanded="true">
+                   대분류
+                </button>
+                <button th:unless="${cs.index}==0" class="btn btn-link" th:text="${cat.name}" data-bs-toggle="collapse" data-bs-target="#명함"  aria-expanded="false">
+                    대분류
+                </button>
+                <th:block th:each="categoryc : ${categoryCList}">
+                <div th:if="${categoryc.categoryP.id} == ${cat.id}"  class="collapse show" id="명함" >
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a  class="link-dark d-inline-flex text-decoration-none rounded" th:text="${categoryc.name}"   th:href="@{'/order/' + ${categoryc.id}} "></a></li>
+                    </ul>
+                </div>
+
+                </th:block>
+            </li>
+            </th:block>
+        </ul>
+    </div>
+
+
+
+</div>
+</html>

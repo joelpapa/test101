@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:justify-content="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/layout1}">
+<div layout:fragment="~{content}">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">소분류
+    </button>
+
+    <div class="dropdown" >
+        <ul   class="dropdown-menu">
+            <li th:each="categoryc : ${categoryCList}"
+                class="dropdown-item"  th:text="${categoryc.name}" th:value="${categoryc.id}">
+            </li>
+        </ul>
+
+
+    </div>
+
+</div>
+</html>

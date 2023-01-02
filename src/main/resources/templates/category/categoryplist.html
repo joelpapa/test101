@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:justify-content="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/layout1}">
+<div layout:fragment="~{content}">
+    <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+        대분류
+    </button>
+                <div class="dropdown" >
+                    <ul   class="dropdown-menu">
+                        <li th:each="category : ${categoryPList}">
+                            <a class="dropdown-item" th:href="@{'/category/list/' + ${category.id}}"  th:text="${category.name}">1</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+    </div>
+</div>
+</html>

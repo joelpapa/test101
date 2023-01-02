@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:justify-content="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/layout1}">
+<!--<th:block layout:fragment="css">-->
+<!--    <style>-->
+<!--        .fieldError {-->
+<!--         color: #bd2130;-->
+<!--         }-->
+<!--    </style>-->
+<!--</th:block>-->
+
+<!--<th:block layout:fragment="script">-->
+<!--    <script th:inline="javascript">-->
+<!--        $(document).ready(function() {-->
+<!--          var errorMessage = [[${errorMessage}]];-->
+<!--          if(errorMessage != null) {-->
+<!--            alert(errorMessage);-->
+<!--                                   }-->
+<!--        } );-->
+
+<!--    </script>-->
+
+<!--</th:block>-->
+
+<div layout:fragment="~{content}">
+    <div class="container">
+        <h1 th:text="${board.title}"></h1>
+        <hr>
+        <h5 th:text="${board.content}" ></h5>
+
+
+    </div>
+
+</div>
+</html>

@@ -47,18 +47,20 @@ public class MemberController {
 
     @GetMapping(value = "/login")
     public String loginMember(){
-
-        return "/members/memberLoginForm";
+      return "/members/memberLoginForm";
     }
 
     @GetMapping(value = "/login/error")
     public String loginError(Model model){
         model.addAttribute("loginError", "아이디 또는 비밀번호를 확인해주세요");
-        return "/members/memberLoginForm";
+        model.addAttribute("message", "아이디 또는 비밀번호를 확인해주세요.");
+        model.addAttribute("searchUrl", "/members/login");
+        return "/message";
+        
     }
 
-    @GetMapping(value="/logout")
+    @PostMapping(value="/logout")
     public String logout() {
-        return "members/logout_success";
+        return "/members/login";
     }
 }

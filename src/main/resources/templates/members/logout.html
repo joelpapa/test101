@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<!-- 사용자 CSS 추가 -->
+
+
+<!-- 사용자 스크립트 추가 -->
+
+
+<div layout:fragment="~{content}">
+
+    <form action="@{'/members/logout'}" method="post">
+        <input type="submit" value="Log out" />
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+
+    </form>
+
+</div>
+</html>
